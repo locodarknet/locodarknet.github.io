@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOCO TERMINAL - Login</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      display: flex;
+      flex-direction: column; /* Added to stack the elements */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 5px;
+    }
+    .login-box h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: white;
+      animation: changeTitleColor 5s infinite;
+    }
+    .login-box p {
+      font-size: 14px;
+      color: white;
+      margin-top: 5px;
+    }
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      border-radius: 3px;
+    }
+    .login-box input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    @keyframes changeTitleColor {
+      0% { color: white; }
+      16.6% { color: red; }
+      33.3% { color: green; }
+      50% { color: blue; }
+      66.6% { color: purple; }
+      83.3% { color: gray; }
+      100% { color: white; }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>LOCO TERMINAL</h1>
+    <p>TGT corporation</p> <!-- Added small text below the title -->
+    <form onsubmit="return checkLogin()">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <input type="submit" value="Log In">
+    </form>
+  </div>
+
+  <script>
+    function checkLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Define authorized usernames and corresponding passwords
+      var authorizedCredentials = {
+        "lola": ["loco"],
+        "sharky": ["loco"],
+        // Add more authorized usernames and passwords as needed
+      };
+
+      if (username in authorizedCredentials) {
+        var validPasswords = authorizedCredentials[username];
+        if (validPasswords.includes(password)) {
+          window.location.href = "home.html?username=" + encodeURIComponent(username);
+          return false; // Prevent form submission
+        }
+      }
+
+      // Handle failed login
+      alert("Login failed. Please check your username and password.");
+      return false; // Prevent form submission
+    }
+  </script>
+</body>
+</html>
