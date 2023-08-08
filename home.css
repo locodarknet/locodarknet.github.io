@@ -1,0 +1,231 @@
+/* home.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: #333;
+  /* Rainbow Animation */
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; } /* Red */
+  16% { color: #ff7f00; } /* Orange */
+  33% { color: #ffff00; } /* Yellow */
+  50% { color: #00ff00; } /* Green */
+  66% { color: #0000ff; } /* Blue */
+  83% { color: #4b0082; } /* Indigo */
+  100% { color: #9400d3; } /* Violet */
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
+/* Create Post Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.close {
+  color: #333;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* Create Post Button */
+.create-post-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Feed and Chat Boxes */
+.green-box, .chat-box {
+  background-color: #000000;
+  border: 2px solid #27ae60;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  /* Green Outline */
+  box-shadow: 0 0 0 3px #27ae60;
+}
+
+.green-box h3, .chat-box h3 {
+  margin: 0;
+  color: #fff;
+}
+
+/* Posts */
+.post-container {
+  border: 2px solid #27ae60;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.post-container h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #27ae60;
+}
+
+.post-container p {
+  margin: 5px 0;
+  color: #fff;
+}
+
+.post-container img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.delete-post-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chat Messages */
+.chat-message {
+  color: #fff;
+  margin: 5px 0;
+}
+
+.chat-user {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.chat-time-date {
+  font-size: 10px;
+  color: #ccc;
+}
+
+/* Chat Input and Button */
+.chat-box input[type="text"] {
+  width: 80%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.send-message-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.send-message-button:hover {
+  background-color: #219653;
+}
+
+/* Scrollable Chat Messages */
+.chat-box .chat-messages {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Terminal Box */
+.terminal-box {
+  background-color: black;
+  border: 2px solid green;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  color: white;
+}
+
+/* Terminal Output */
+#terminalOutput {
+  background-color: black;
+  padding: 5px;
+  overflow: auto;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+/* Terminal Input */
+#terminalInput {
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid green;
+  padding: 5px;
+  color: white;
+  width: 80%;
+  font-family: monospace;
+}
