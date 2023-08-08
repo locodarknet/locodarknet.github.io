@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home - LOCO TERMINAL</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <h1>Welcome to LOCO TERMINAL, <span id="username"></span>!</h1>
+  
+  <button class="create-post-button" onclick="openCreatePostModal()">+</button>
+  
+  <div id="createPostModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCreatePostModal()">&times;</span>
+      <h2>Create Post</h2>
+      <form id="postForm">
+        <input type="text" id="postTitle" placeholder="Title" required><br>
+        <textarea id="postDescription" placeholder="Description" required></textarea><br>
+        <input type="file" id="postImage"><br>
+        <input type="submit" value="Post">
+      </form>
+    </div>
+  </div>
+  
+  <div class="green-box">
+    <h3>Feed</h3>
+    <div class="post-feed" id="postFeed">
+      <!-- Posts will be added here -->
+    </div>
+  </div>
+  
+  <div class="chat-box">
+    <h3>Chat</h3>
+    <div class="chat-messages" id="chatMessages">
+      <!-- Chat messages will be added here -->
+    </div>
+    <input type="text" id="chatInput" placeholder="Type your message...">
+    <button class="send-message-button" onclick="sendMessage()">Send</button>
+  </div>
+
+  <!-- Announcement -->
+  <div class="announcement">
+    <h3 style="color: #27ae60;">The Terminal</h3>
+    <p style="color: #fff;">Here is the access to the LOCO terminal where you can run our pre-programmed commands for Discord and more features. <a href="another_page.html" style="color: #fff; text-decoration: underline;">Click here</a> to run our terminal.</p>
+  </div>
+
+  <!-- Run Terminal Button (Redirect to another_page.html) -->
+  <div class="button-container">
+    <a class="run-terminal-button" href="another_page.html">Run Terminal</a>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>
