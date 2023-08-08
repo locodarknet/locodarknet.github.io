@@ -1,0 +1,28 @@
+/* ... (Your existing styles) ... */
+
+.redirect-button {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  animation: rainbow 4s linear infinite;
+}
+
+.redirect-button:hover {
+  animation: none;
+  background: #2980b9;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
